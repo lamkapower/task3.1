@@ -9,6 +9,8 @@ def json_read():
             descript_list.append(content['description'].split())
     return descript_list
 
+
+
 def sortByLength(inputStr):
     return len(inputStr)
 
@@ -21,6 +23,7 @@ def listmerge(json_read):
         if len(value) > 6:
             top_words.append(merged_list[num])
     top_words.sort(key=sortByLength , reverse=True)
+    top_words = map(lambda x:x.lower(), top_words)
     return top_words
 
 def top_ten():
